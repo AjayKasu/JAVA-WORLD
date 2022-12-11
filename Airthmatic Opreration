@@ -1,0 +1,81 @@
+// Airthmatic operation perform by user.
+import java.util.Scanner;
+class   Add
+{
+	int add1(int a, int b)
+	{
+		return a+b;
+	}
+}
+class Sub
+{
+	int sub1(int a, int b)
+	{
+		return a-b;
+	}
+}
+class Mul
+{
+	int mul1(int a, int b)
+	{
+		return a*b;
+	}
+}
+class Div
+{
+	float div1(float  a, float b)
+	{
+		return a/b;
+	}
+}
+class Mod
+{
+	int mod1(int a, int b)
+	{
+		return a%b;
+	}
+}
+class  Airth
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a value");
+		int a = sc.nextInt();
+		System.out.println("Enter b value");
+		int b = sc.nextInt();
+		System.out.println("Enter choice value");
+		int choice =sc.nextInt();
+		if (a>=0 && b>=0)
+		{
+			switch (choice)
+		{
+		case 1:Add ad =new Add();
+		int s=ad.add1(a,b);
+		System.out.println("adition of a and b is :"+s);
+		break;
+		case 2:Sub su = new Sub();
+		int p = su.sub1(a,b);
+		System.out.println("substraction of a and b is"+p);
+		break;
+		case 3:Mul mu = new Mul();
+		int q = mu.mul1(a,b);
+		System.out.println(" mul a and b is"+q);
+		break;
+		case 4:Div di = new Div();
+		float r = di.div1(a,b);
+		System.out.println("division of a and b is"+r);
+		break;
+		case 5:Mod mo = new Mod();
+		int t = mo.mod1(a,b);
+		System.out.println("reminder of a and b is"+t);
+		break;
+		default: System.out.println("out of choice");
+		}
+	}
+else
+		{
+			System.out.println("vlaues less than Zero");
+		}
+}
+}
