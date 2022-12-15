@@ -80,3 +80,38 @@ class Peak1
 
 	}
 }
+// By using the MATH LANGUAGE LIBRARY used.
+import java.util.Scanner;
+import java.lang.Math.*;
+class Greatest
+	{
+    int k;
+    int getGreatest(int m, int n)
+		{
+        if(m<0 || n<0){
+            return k=-1;
+        }
+        else if(m==0 || n==0){
+            return k=-2;
+        }
+        else
+		{
+            return k=Math.min(m,n);
+        }
+    }
+}
+public class GretestK
+	{
+    public static void main(String args[])
+		{
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number m:");
+        int m=s.nextInt();
+        System.out.println("Enter the number n:");
+        int n=s.nextInt();
+        Greatest gt=new Greatest();
+        int v=gt.getGreatest(m,n);
+        System.out.println("return type values is "+v);
+        }
+    }
+ 
