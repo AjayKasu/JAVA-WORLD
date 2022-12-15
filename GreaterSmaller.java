@@ -32,7 +32,7 @@ class Peak
 		System.out.println("enter y value");
 		int y =ob.nextInt();
 		Great gr = new Great();
-		int z =gr.getGreater(x,y);
+		int z =gr.getGreater(x,y);// method call
 		System.out.println("x value is "+x);
 		System.out.println("y value is "+y);
 		System.out.println("z value is RETURN TYPE"+z);
