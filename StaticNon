@@ -1,0 +1,86 @@
+/* #CODING RULE: For static and non-static rules.
+STATIC: The static programming components which is accessed with the CLASS NAME. Eg: Main.a(for static)
+NON-STATIC:The non-static programming components accessed with OBJECT NAME.Eg:ob.a (for non-static).
+*/
+public class SaticNon
+{
+String s1 = "GitHub";
+static int v1 =100;
+public static void main(String[] args)
+{
+StaticNon ob = new StaticNon();
+System.out.println("String 1 value:"+ob.s1);
+System.out.println("String 1 value:"+SaticNon.v1);
+}
+}
+================================================================================================================================
+public class CompareStrings 
+		{
+		String s1 = "GitHub";
+		String s2 = "GitHub";
+		static int v1 =100;
+		public static void main(String[] args){
+			CompareStrings ob = new CompareStrings ();
+			if (ob.s1==ob.s2) {
+			System.out.println("String 1 :"+ob.s1);
+			System.out.println("String 1 :"+ob.s2);
+			System.out.println("String 1 and 2 are equal:");
+			}
+			else {
+				System.out.println("not equal, the given strings");
+			}
+			System.out.println("String 1 value:"+CompareStrings.v1);
+		}
+	}
+  =========================================================================================================================================
+  /*In string the methods are used i.e a)using "equals()" method(two strings comapare and generate boolean result.),
+  b)compareTo():which methods is also used to compare two strings and generate int result.>>method signatures: 1. public int comapareTo(java.lang.string); 
+  2.public int compateToIgnoreCase(java.lang.String);
+  c)equal to(==):which operator will compare the object references, which means it will not compare the content(data) available in the objects. 
+  */
+  //b) example
+package pack1;
+import java.util.*;
+public class StringsMethods {
+	public static void main(String[] args) {
+		Scanner x = new Scanner(System.in);
+		System.out.println("enter string 1 :");
+		String s1 = x.nextLine();
+		System.out.println("enter string 2:");
+		String s2 = x.nextLine();
+		int z = s1.compareTo(s2);//Eg. s1=ajay,s2=AJAY THE CHAR VALUE a =97 and A=65
+		if (z==0)
+		{
+			System.out.println("both strings are equal");
+		}
+		else if (z>0)
+		{
+			System.out.println(s1+" greater than "+s2);
+		}
+		else
+		{
+			System.out.println(s1 + "is less than" + s2);
+		}
+		x.close();
+	}
+}
+// IF GIVE INPUT SAME, GOES SAME ADDRESS. SO IT WILL PRINT OUPUT BOTH ARE SAME STRINGS.
+------------------------------------------------------------------------------------------------------------------
+//c) and String literal process. string s = new String("String");
+package pack1;
+import java.util.*;
+public class StringsMethods {
+	public static void main(String[] args) {
+    String s3 = new String("RAMA");// RAMA GOES TO SAME ADDRESS 0X13 BUT S3 IS GOES DIFF.ADDRESS
+		String s4 = new String("RAMA");// SIMILARLY S4 HAS ANOTHER ADDRESS. HENCE BOTH ARE NOT EQUAL.
+		if (s3==s4)
+		{
+			System.out.println("equal");//it's not equal even give name same strings.
+		}
+		else
+		{
+			System.out.println("not equal");
+		}
+	}
+}
+  
