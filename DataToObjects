@@ -1,0 +1,98 @@
+/*LOADING DATA TO OBJECTS: 3- ways to load the data to objects.
+1.using constructor
+2.using object reference variable
+3.using setter methods.*/
+//1.using constructor
+
+//2.using object references variable
+package pack1;
+import java.util.Scanner; 
+class Load {
+	String custId,custName;
+	long phnNo;
+	void m1() {
+		System.out.println("***customer details by object reference***");
+		System.out.println("customer id:" +custId);
+		System.out.println("customer name:" +custName);
+		System.out.println("customer phone number:" +phnNo);
+	}
+}
+public class ObjectRef {
+	
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		Load ob = new Load();
+		System.out.println("Enter the customer id:");
+		ob.custId =s.nextLine();
+		System.out.println("enter the customer name:");
+		ob.custName=s.nextLine();
+		System.out.println("enter the phnone number:");
+		ob.phnNo=s.nextLong();
+		ob.m1();
+		s.close();
+	}
+}
+---------------------------------------------------------------------------------------------------------------
+//setter getter method >>this for package p1
+package packages;
+public class SubClasss 
+{
+	public String custId,custNm,custCity, custMailId;
+	long phnNo;
+	public String getCustId() {
+		return custId;
+	}
+	public void setCustId(String custId) {
+		this.custId = custId;
+	}
+	public String getCustNm() {
+		return custNm;
+	}
+	public void setCustNm(String custNm) {
+		this.custNm = custNm;
+	}
+	public String getCustCity() {
+		return custCity;
+	}
+	public void setCustCity(String custCity) {
+		this.custCity = custCity;
+	}
+	public String getCustMailId() {
+		return custMailId;
+	}
+	public void setCustMailId(String custMailId) {
+		this.custMailId = custMailId;
+	}
+	public long getPhnNo() {
+		return phnNo;
+	}
+	public void setPhnNo(long phnNo) {
+		this.phnNo = phnNo;
+	}	
+}
+// package 2
+package p2;
+public class MainClass {
+public static void main(String[] args) {
+	java.util.Scanner s = new java.util.Scanner(System.in);// input from user
+	packages.SubClasss x= new  packages.SubClasss();// object creation
+	System.out.println("enter customer id: ");
+	x.setCustId(s.nextLine());
+	System.out.println("enter customer name:");
+	x.setCustNm(s.nextLine());
+	System.out.println("enter customer city:");
+	x.setCustCity(s.nextLine());
+	System.out.println("enter customer  mail_id: ");
+	x.setCustMailId(s.nextLine());
+	System.out.println("enter customer phone numer:");
+	x.setPhnNo(s.nextLong());
+	System.out.println("*****customer Details****");
+	System.out.println("customer id:" +x.getCustId());
+	System.out.println("customer name:" +x.getCustNm());
+	System.out.println("customer name:" +x.getCustCity());
+	System.out.println("customer name:" +x.getCustMailId());
+	System.out.println("customer name:" +x.getPhnNo());
+	s.close();
+	}
+}
+
