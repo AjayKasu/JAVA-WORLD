@@ -1,0 +1,54 @@
+/* Class in SubClass concept clearly understand by the below program.
+1.First of all i create the two packages those are p1 and p2 named respectively.
+2.p1 is contained MainClass and p2 has class and subclass are declard.
+After the code execution we can clearly understand the program.*/
+package p2;
+//Outer class of subclass
+public class SubClass1 {
+	public int a=10;
+	public static int b=20;
+	public void m1() {
+		System.out.println("**SubClass1(OuterClass) non-static m1()**");
+		System.out.println(" The value a:"+a);
+		System.out.println(" The value b:"+b);
+	}
+//Inner class(0) of subclass
+//class take it as static and without and check once. you observe the output 
+public static class SubClass2 {
+	public int x=100;
+	public static int y=200;
+	public void m2() {
+		System.out.println("**SubClass2(InnerClass) non-static m2()**");
+		System.out.println("The value x:"+x);
+		System.out.println("The value y:"+y);
+		//if the SubClass is static the then 
+		//System.out.println(" The value a:"+a); In static Suclass2.The Subclass1 non-static variables not accessed in static SubClass2.
+		System.out.println(" The value b:"+b);
+	}
+	public static void m22() {
+		System.out.println("**SubClass(InnerClass)>static m1()");
+		System.out.println("The value y:"+y);
+		System.out.println(" The value b:"+b);
+		//System.out.println(" The value a:"+a); a and x are non-static
+		//System.out.println(" The value a:"+x);
+	}
+}
+}
+//Main class here.
+package p1;
+import p2.SubClass1;
+public class MainClass {
+	public static void main(String[] args)
+	{
+		System.out.println("Main Class");
+		//Outer Class object
+		SubClass1 ob1 =new SubClass1();
+		ob1.m1();
+		//Inner Class object
+		SubClass1.SubClass2 ob2=new SubClass1.SubClass2();
+		//if the Subclass2 is non-static the object created(ob2) syntax is SubClass1.Subclass2 ob2==ob1.SubClass2();
+		ob2.m2();
+		SubClass1.SubClass2.m22();
+	}
+}
+
